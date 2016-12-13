@@ -4,14 +4,15 @@ const sass = require('gulp-sass');
 const inlineCss = require('gulp-inline-css');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
+const runSequence = require('run-sequence');
 
 gulp.task('jade', () => {
-  gulp.src('./jade/*.jade')
-  .pipe(jade({
-    'pretty': true
-  }))
-  .pipe(inlineCss())
-  .pipe(gulp.dest('./publish/'));
+  return gulp.src('./jade/*.jade')
+    .pipe(jade({
+      'pretty': true
+    }))
+    .pipe(inlineCss())
+    .pipe(gulp.dest('./publish/'));
 });
 
 gulp.task('sass', () => {
@@ -28,9 +29,13 @@ gulp.task('server', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch('./scss/**/*.scss', ['sass']);
+  gulp.watch('./scss/**/*.scss', ['build']);
   gulp.watch('./jade/**/*.jade', ['jade']);
   gulp.watch('./publish/*.html').on('change', reload);
+});
+
+gulp.task('build', () => {
+  runSequence('sass', 'jade');
 });
 
 gulp.task('default', ['server', 'watch']);

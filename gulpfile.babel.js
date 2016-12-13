@@ -1,12 +1,14 @@
 const gulp = require('gulp');
 const jade = require('gulp-jade');
 const sass = require('gulp-sass');
+const inlineCss = require('gulp-inline-css');
 
 gulp.task('jade', () => {
   gulp.src('./jade/*.jade')
   .pipe(jade({
     'pretty': true
   }))
+  .pipe(inlineCss())
   .pipe(gulp.dest('./public/'));
 });
 

@@ -18,3 +18,9 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('./css'));
 });
 
+gulp.task('watch', () => {
+  gulp.watch('./scss/**/*.css', ['sass']);
+  gulp.watch('./jade/**/*.jade', ['jade']);
+});
+
+gulp.task('default', ['watch']);

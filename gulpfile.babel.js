@@ -3,6 +3,7 @@ const jade = require('gulp-jade');
 const sass = require('gulp-sass');
 const inlineCss = require('gulp-inline-css');
 const browserSync = require('browser-sync');
+const reload = browserSync.reload;
 
 gulp.task('jade', () => {
   gulp.src('./jade/*.jade')
@@ -29,6 +30,7 @@ gulp.task('server', () => {
 gulp.task('watch', () => {
   gulp.watch('./scss/**/*.scss', ['sass']);
   gulp.watch('./jade/**/*.jade', ['jade']);
+  gulp.watch('./publish/*.html').on('change', reload);
 });
 
 gulp.task('default', ['server', 'watch']);

@@ -9,7 +9,7 @@ gulp.task('jade', () => {
     'pretty': true
   }))
   .pipe(inlineCss())
-  .pipe(gulp.dest('./public/'));
+  .pipe(gulp.dest('./publish/'));
 });
 
 gulp.task('sass', () => {

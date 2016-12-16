@@ -5,25 +5,33 @@ import inlineCss from 'gulp-inline-css';
 import browserSync from 'browser-sync';
 import runSequence from 'run-sequence';
 
+const PATH = {
+  jade: './resources/jade/',
+  scss: './resources/scss/',
+  css: './.tmp/css/',
+  html: './html-mail/html',
+  media: './html-mail/media/'
+};
+
 gulp.task('jade', () => {
-  return gulp.src('./resources/jade/*.jade')
+  return gulp.src(`${PATH.jade}**/*.jade`)
     .pipe(jade({
       'pretty': true
     }))
     .pipe(inlineCss())
-    .pipe(gulp.dest('./html-mail/html/'));
+    .pipe(gulp.dest(PATH.html));
 });
 
 gulp.task('sass', () => {
-  return gulp.src('./resources/scss/**/*.scss')
+  return gulp.src(`${PATH.scss}**/*.scss`)
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./.tmp/css'));
+    .pipe(gulp.dest(PATH.css));
 });
 
 gulp.task('server', () => {
   browserSync.init({
-    server: ['./html-mail/html/', './html-mail/media/'],
-    files: ['./html-mail/html/**/*.*'],
+    server: [PATH.html, PATH.media],
+    files: [`${PATH.html}**/*.*`],
     notify: false,
     rewriteRules: [
       {
@@ -35,8 +43,8 @@ gulp.task('server', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch('./resources/scss/**/*.scss', ['build']);
-  gulp.watch('./resources/jade/**/*.jade', ['jade']);
+  gulp.watch(`${PATH.scss}**/*.scss`, ['build']);
+  gulp.watch(`${PATH.jade}**/*.jade`, ['jade']);
 });
 
 gulp.task('build', () => {

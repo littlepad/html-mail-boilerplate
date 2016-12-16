@@ -1,10 +1,13 @@
-doctype html
-html
-  head
-    title html mail template
-    link(rel='stylesheet' href='../../.tmp/css/template.css')
-  body
-    h1 html mail template
-    p this is html template
-    p
-      img(src='https://example.com/images/sample.jpg')
+extends template/_base_ja
+
+block var_title
+  - var title = 'html mail template'
+
+block var_css
+  - var css = '../../.tmp/css/template.css'
+
+block content
+  h1 html mail template
+  p this is html template
+  p
+    img(src='https://example.com/images/sample.jpg')

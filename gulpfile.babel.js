@@ -16,7 +16,7 @@ const PATH = {
 };
 
 gulp.task('jade', () => {
-  return gulp.src(`${PATH.jade}**/*.jade`)
+  return gulp.src([`${PATH.jade}**/*.jade`, `!${PATH.jade}**/_*.jade`])
     .pipe(jade({
       'pretty': true
     }))

@@ -23,6 +23,9 @@
     "gulp-inline-css": "^3.1.0",
     "gulp-jade": "^1.1.0",
     "gulp-sass": "^3.0.0",
+    "hoxy": "^3.2.1",
+    "http": "0.0.0",
+    "http-proxy": "^1.16.2",
     "run-sequence": "^1.2.2"
   }
 }

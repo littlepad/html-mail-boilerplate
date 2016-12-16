@@ -43,4 +43,6 @@ gulp.task('build', () => {
   runSequence('sass', 'jade');
 });
 
-gulp.task('default', ['server', 'watch']);
+gulp.task('default', () => {
+  runSequence('build', 'server', 'watch')
+});

@@ -4,6 +4,8 @@ import sass from 'gulp-sass';
 import inlineCss from 'gulp-inline-css';
 import browserSync from 'browser-sync';
 import runSequence from 'run-sequence';
+import stylelint from 'gulp-stylelint';
+import plumber from 'gulp-plumber';
 
 const PATH = {
   jade: './resources/jade/',
@@ -24,6 +26,12 @@ gulp.task('jade', () => {
 
 gulp.task('sass', () => {
   return gulp.src(`${PATH.scss}**/*.scss`)
+    .pipe(plumber())
+    .pipe(stylelint({
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }))
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(PATH.css));
 });

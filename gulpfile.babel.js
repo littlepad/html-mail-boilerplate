@@ -11,7 +11,7 @@ gulp.task('jade', () => {
       'pretty': true
     }))
     .pipe(inlineCss())
-    .pipe(gulp.dest('./publish/'));
+    .pipe(gulp.dest('./html-mail/html/'));
 });
 
 gulp.task('sass', () => {
@@ -22,8 +22,8 @@ gulp.task('sass', () => {
 
 gulp.task('server', () => {
   browserSync.init({
-    server: ['./publish/', './media/'],
-    files: ['./publish/**/*.*'],
+    server: ['./html-mail/html/', './html-mail/media/'],
+    files: ['./html-mail/html/**/*.*'],
     notify: false,
     rewriteRules: [
       {

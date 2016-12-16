@@ -1,9 +1,9 @@
-const gulp = require('gulp');
-const jade = require('gulp-jade');
-const sass = require('gulp-sass');
-const inlineCss = require('gulp-inline-css');
-const browserSync = require('browser-sync');
-const runSequence = require('run-sequence');
+import gulp from 'gulp';
+import jade from 'gulp-jade';
+import sass from 'gulp-sass';
+import inlineCss from 'gulp-inline-css';
+import browserSync from 'browser-sync';
+import runSequence from 'run-sequence';
 
 gulp.task('jade', () => {
   return gulp.src('./jade/*.jade')

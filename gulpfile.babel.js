@@ -17,7 +17,7 @@ gulp.task('jade', () => {
 gulp.task('sass', () => {
   return gulp.src('./scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./assets/css'));
+    .pipe(gulp.dest('./.tmp/css'));
 });
 
 gulp.task('server', () => {

@@ -6,7 +6,7 @@ import browserSync from 'browser-sync';
 import runSequence from 'run-sequence';
 
 gulp.task('jade', () => {
-  return gulp.src('./jade/*.jade')
+  return gulp.src('./resources/jade/*.jade')
     .pipe(jade({
       'pretty': true
     }))
@@ -15,7 +15,7 @@ gulp.task('jade', () => {
 });
 
 gulp.task('sass', () => {
-  return gulp.src('./scss/**/*.scss')
+  return gulp.src('./resources/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./.tmp/css'));
 });
@@ -35,8 +35,8 @@ gulp.task('server', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch('./scss/**/*.scss', ['build']);
-  gulp.watch('./jade/**/*.jade', ['jade']);
+  gulp.watch('./resources/scss/**/*.scss', ['build']);
+  gulp.watch('./resources/jade/**/*.jade', ['jade']);
 });
 
 gulp.task('build', () => {

@@ -1,8 +1,9 @@
-h1 {
-  font-size: 20px;
-  color: #f00;
-}
+// foundation
+@import "foundation/variables";
+@import "foundation/base";
+@import "foundation/mixiin";
 
-p {
-  text-decoration: underline;
-}
+// layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/content";

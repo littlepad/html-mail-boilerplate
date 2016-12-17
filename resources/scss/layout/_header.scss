@@ -1,0 +1,8 @@
+.l-header {
+  width: 100%;
+  max-width: $header-width;
+  padding: 20px;
+  background: $color-gray-light;
+
+  @include fs(10px);
+}

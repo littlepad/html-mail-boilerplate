@@ -1,0 +1,10 @@
+.l-footer {
+  width: 100%;
+  max-width: $footer-width;
+  padding: 20px;
+  background: #222;
+
+  @include fs(10px);
+
+  color: $color-white;
+}

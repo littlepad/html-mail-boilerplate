@@ -2,9 +2,9 @@
 
 Development environment boilerplate for html mail.
 
-### Gulp Tasks
+## Gulp Tasks
 
-#### development
+### development
 
 sass + stylelint + jade + inlineCss + server + watch
 
@@ -12,7 +12,7 @@ sass + stylelint + jade + inlineCss + server + watch
 $ gulp
 ```
 
-#### build
+### build
 
 sass + stylelint + jade + inlineCss
 
@@ -20,9 +20,11 @@ sass + stylelint + jade + inlineCss
 $ gulp build
 ```
 
-#### stylelint
+### stylelint
 
 The stylelint rule is defined based on css which is [universally supported by the most common e-mail clients](http://www.emailology.org/#3).
+
+#### base rules
 
 - background
 - background-color
@@ -66,6 +68,12 @@ The stylelint rule is defined based on css which is [universally supported by th
 - text-transform
 - vertical-align
 - width
+
+#### additional rules 
+
+- max-width
+- text-size-adjust
+  
 
 ### server
 

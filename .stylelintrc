@@ -43,7 +43,9 @@
       "text-indent",
       "text-transform",
       "vertical-align",
-      "width"
+      "width",
+      "max-width",
+      "text-size-adjust"
     ]
   }
 }

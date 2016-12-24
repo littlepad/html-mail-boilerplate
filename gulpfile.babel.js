@@ -22,7 +22,9 @@ gulp.task('jade', () => {
       'pretty': true
     }))
     .pipe(inlineCss({
-      "removeHtmlSelectors": true
+      'applyWidthAttributes': true,
+      'applyTableAttributes': true,
+      'removeHtmlSelectors': true
     }))
     .pipe(gulp.dest(PATH.html));
 });

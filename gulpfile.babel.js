@@ -21,7 +21,9 @@ gulp.task('jade', () => {
     .pipe(jade({
       'pretty': true
     }))
-    .pipe(inlineCss())
+    .pipe(inlineCss({
+      "removeHtmlSelectors": true
+    }))
     .pipe(gulp.dest(PATH.html));
 });
 

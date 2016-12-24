@@ -24,6 +24,7 @@
     "gulp-inline-css": "^3.1.0",
     "gulp-jade": "^1.1.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "^3.0.0",
     "gulp-stylelint": "^3.6.0",
     "hoxy": "^3.2.1",

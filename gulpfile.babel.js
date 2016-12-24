@@ -6,6 +6,7 @@ import browserSync from 'browser-sync';
 import runSequence from 'run-sequence';
 import stylelint from 'gulp-stylelint';
 import plumber from 'gulp-plumber';
+import replace from 'gulp-replace';
 
 const PATH = {
   jade: './resources/jade/',
@@ -29,10 +30,11 @@ gulp.task('sass', () => {
     .pipe(plumber())
     .pipe(stylelint({
       reporters: [
-        {formatter: 'string', console: true}
+        { formatter: 'string', console: true }
       ]
     }))
     .pipe(sass().on('error', sass.logError))
+    .pipe(replace('@charset "UTF-8";', ''))
     .pipe(gulp.dest(PATH.css));
 });
 
